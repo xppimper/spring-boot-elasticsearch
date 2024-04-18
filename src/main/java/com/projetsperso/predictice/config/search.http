@@ -1,0 +1,34 @@
+POST http://localhost:9200/album/_search
+Content-Type: application/json
+
+{
+   "query":{
+      "bool":{
+         "should":[
+            {
+               "query_string":{
+                  "query":"green",
+                  "fields":[
+                     "title"
+                  ]
+               }
+            },
+            {
+               "query_string":{
+                  "query":"green",
+                  "fields":[
+                     "artist"
+                  ]
+               }
+            }
+         ]
+      }
+   },
+  "aggs": {
+    "releaseYears": {
+      "terms": {
+        "field": "releaseYear"
+      }
+    }
+  }
+}
