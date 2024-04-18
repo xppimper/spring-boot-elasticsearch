@@ -1,4 +1,4 @@
-#Guide
+# Guide
 
 To launch the application, you have two options
 1. Create an executable JAR -> Build the Docker image with the JAR file -> Run it
